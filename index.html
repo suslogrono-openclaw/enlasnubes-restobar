@@ -1746,13 +1746,6 @@
                 <h2>Menú</h2>
                 <p>Descubre nuestra propuesta gastronómica, fusionando sabores de tres cocinas</p>
             </div>
-            <div class="menu-categories">
-                <button class="menu-cat-btn active" data-cat="todos">Todos</button>
-                <button class="menu-cat-btn" data-cat="asturiana">Asturiana</button>
-                <button class="menu-cat-btn" data-cat="alemana">Alemana</button>
-                <button class="menu-cat-btn" data-cat="mediterranea">Mediterránea</button>
-                <button class="menu-cat-btn" data-cat="postres">Postres</button>
-            </div>
             <div class="menu-downloads">
                 <a href="carta-comidas.pdf" download class="download-btn"><i class="fas fa-utensils"></i> Carta de Comidas</a>
                 <a href="carta-vinos.pdf" download class="download-btn"><i class="fas fa-wine-glass"></i> Carta de Vinos</a>
@@ -1974,6 +1967,7 @@
         // Menu category filter
         const catBtns = document.querySelectorAll('.menu-cat-btn');
         const menuItems = document.querySelectorAll('.menu-item');
+        if (catBtns.length && menuItems.length) {
         catBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 catBtns.forEach(b => b.classList.remove('active'));
@@ -1989,6 +1983,7 @@
                 });
             });
         });
+        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
